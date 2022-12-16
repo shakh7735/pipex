@@ -1,0 +1,6 @@
+-rwxr-xr-x@ 1 eshakhge  2022_yerevan     1511 May 28 14:41 ft_freeable.c
+-rw-r--r--  1 eshakhge  2022_yerevan     2040 May 28 17:51 ft_freeable.o
+-rwxr-xr-x@ 1 eshakhge  2022_yerevan     2824 May 28 16:06 ft_pipex.c
+-rwxr-xr-x@ 1 eshakhge  2022_yerevan     2566 May 28 15:51 ft_pipex.h
+-rwxr-xr-x@ 1 eshakhge  2022_yerevan     2381 May 27 19:51 ft_split.c
+-rw-r--r--  1 eshakhge  2022_yerevan     2168 May 28 17:51 ft_split.o

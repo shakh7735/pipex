@@ -1,0 +1,47 @@
+ОПИСАНИЕ
+Функция strcmp() сравнивает строки s1 и s2. Она возвращает целое число, которое меньше,
+ больше нуля или равно ему, если выяснится, что s1 меньше, равна или больше s2 соответственно.
+Функция strncmp() работает аналогичным образом, но сравниваются только первые (не более) n байт строки s1 и s2.
+
+ВОЗВРАЩАЕМОЕ ЗНАЧЕНИЕ
+Функции strcmp() и strncmp() возвращают целое число, которое меньше, больше нуля или равно ему, 
+если строка s1 (или её первые n байтов) соответственно меньше, больше или равна s2.
+АТРИБУТЫ
+Описание терминов данного раздела смотрите в attributes(7).
+
+В первоначальной колонке содержится количество строк, во второй кол-во слов, в третьей кол-во знаков
+
+wc -l file.txt #вывести количество строк (ряд знаков, написанных или напечатанных в одну линию)
+
+wc -c file.txt #вывести количество байт
+
+wc -m file.txt #вывести число символов
+
+wc -L file.txt #вывести длину самой длинной строки
+
+wc -w file.txt #вывести число слов
+
+./pipex infile.txt "grep wc" "wc -l" outfile.txt
+
+<infile.txt grp file | wc -l > outfile.txt
+
+			<test 1>
+./pipex input "grep Hello" "wc -l" output 
+< input grep Hello | wc -l > output
+zsh: no such file or directory: input
+
+			<test 2>
+./pipex input "grep Hello" "ls -la src/" output
+< input grep Hello | ls -la src/ > output  
+zsh: no such file or directory: input
+ls: src/: No such file or directory
+
+	    	<test 3>
+./pipex input "grep Hello" "awk '{count++} END {print count}'" output
+< input grep Hello | awk '{count++} END {print count}' > output
+zsh: no such file or directory: input
+
+	    	<test 4>
+./pipex input "grep Hello" "awk '{count++} END {print count}'" output
+< input grep Hello | '' > output
+zsh: permission denied:
